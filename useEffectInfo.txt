@@ -1,0 +1,19 @@
+  Варианты применения useEffect
+  
+    useEffect(() => {
+        console.log("mount");
+    }); // при каждом ререндере когда компонент монтируется в DOM
+
+    useEffect(() => {
+        console.log("first render");
+    }, []); // при первом рендере (в конце пустой массив)
+
+    useEffect(() => {
+        console.log("change current page");
+    }, [currentPage]); // при изменении зависимостей
+
+    useEffect(() => {
+        return () => {
+            console.log("unmount");
+        };
+    }); // при демонтаже компонента из DOM
